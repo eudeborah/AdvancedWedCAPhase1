@@ -8,11 +8,11 @@ public class Card {
     private int value;
     private String images;
 
-    public Card(String color, String type, int value, String images) {
+    public Card(String color, String type, int value) {
         this.color = color;
         this.type = type;
         this.value = value;
-        this.images = images;
+        this.images = color + type + value;
     }
 
     public Card(String color,String type){
@@ -58,3 +58,4 @@ public class Card {
     }
     
 }
+

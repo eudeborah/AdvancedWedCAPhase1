@@ -70,9 +70,10 @@ public class Game {
     
     public Card takeCardFromDeck(){
         if(!deckCard.isEmpty()){
-            deckCard.remove(0);
+           return deckCard.remove(0);
+        }else{
+            return null;
         }
-        return null;
     }
     
     public void takeCardFromPile(){
@@ -88,3 +89,4 @@ public class Game {
     }
     
 }
+

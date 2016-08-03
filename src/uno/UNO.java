@@ -13,11 +13,11 @@ public class UNO {
         String id="deb123";
         ArrayList<Deck> deck = new ArrayList<Deck>();
         ArrayList<Player>players=new ArrayList<Player>();
-        players.add(new Player("Janet","Janet"));
-        players.add(new Player("Alice","Alice"));
+        players.add(new Player("Gloria","Gloria"));
         players.add(new Player("Aaron","Aaron"));
         players.add(new Player("Brandon","Bradon"));
-        players.add(new Player("Cat","Cat"));
+        players.add(new Player("Yuki","Yuki"));
+        players.add(new Player("Janet","Janet"));
         
         System.out.println("Ready!!");
         return new Game(id,players,"Started",d.getCards(),d.takeCard());
@@ -44,9 +44,6 @@ public class UNO {
             for(Card c : p.getHand()){
                 System.out.println("Card: "+ c);
             }
-        }
-               
-        
+        }      
     }
-    
 }

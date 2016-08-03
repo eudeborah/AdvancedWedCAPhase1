@@ -7,37 +7,37 @@ import java.util.List;
 public class Deck {
 
     private ArrayList<Card> cards;
-
-    public ArrayList<Card> getCards() {
-        return cards;
-    }
     int cardAmount = 108;
-
-    public Deck(ArrayList<Card> cards) {
-        this.cards = cards;
-    }
     
     public Deck(){
         cards=new ArrayList<Card>();
     }
     
+    public Deck(ArrayList<Card> cards) {
+        this.cards = cards;
+    }
+
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
+    
     public Deck createNewDeck() {
 
-        String colorArray[] = {"red", "yellow", "green", "blue", "wild"};
-        String type[] = {"zero","one", "two", "three", "four", "five", "six", "seven", "eight", "nine","skip", "reverse", "draw_two,", "draw_four","wild"};
+        String colorArray[] = {"Red", "Yellow", "Green", "Blue", "Wild"};
+        String type[] = {"Number"," Skip", "Reverse", "Draw_two", "Draw_four"};
+        int value[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 50};
         cards = new ArrayList<Card>();
 
-        for (int c = 0; c < 4; c++) {
-
-            for (int i = 0; i < 13; i++) {
-
-                for(int a = 0; a < 2 ;a++ ){
-                cards.add(new Card(colorArray[c], type[i]));
+        for (int i = 0; i < 4; i++) {
+            for(int j = 0; j < 9 ;j++ ){
+                cards.add(new Card(colorArray[i], type[0], value[j]));
+            }
+            for (int k = 1; k < 4; k++) {
+                    cards.add(new Card(colorArray[i], type[k], value[9]));
                 } 
             }
-            cards.add(new Card(colorArray[c],type[0]));
-            cards.add(new Card(colorArray[4],type[14]));
-            cards.add(new Card(colorArray[4],type[13]));
+        for(int i = 3; i < 5; i ++ ){
+            cards.add(new Card(colorArray[4], type[i], value[10]));
         }
 
         Collections.shuffle(cards);
@@ -56,7 +56,6 @@ public class Deck {
         cards.add(c);
     }
 }
-
 
     
 
